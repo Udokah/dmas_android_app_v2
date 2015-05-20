@@ -298,7 +298,7 @@ public class MyAccount extends ActionBarActivity {
 
          /* Prepare Volley Request */
         Log.i(TAG, "Preparing request");
-        jsonObjReq = new JsonObjectRequest(Request.Method.PUT,
+        jsonObjReq = new JsonObjectRequest(Request.Method.POST,
                 Url, null, new Response.Listener<JSONObject>() {
 
             @Override
@@ -317,7 +317,7 @@ public class MyAccount extends ActionBarActivity {
         }){
             /* Set Custom Headers */
             @Override
-            public HashMap<String, String> getParams() {
+            public HashMap<String, String> getHeaders() {
                 HashMap<String, String> headers = new HashMap<String, String>();
                 headers.put("AUTHORIZATION", apikey);
                 headers.put("PINCODE", pincode);
