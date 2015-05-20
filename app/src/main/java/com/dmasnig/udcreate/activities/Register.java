@@ -3,7 +3,6 @@ package com.dmasnig.udcreate.activities;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -31,15 +30,11 @@ import com.dmasnig.udcreate.databases.ORMDatabaseManager;
 import com.dmasnig.udcreate.databases.QuotesDatabase;
 import com.dmasnig.udcreate.utilities.Config;
 import com.dmasnig.udcreate.utilities.Lib;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.io.IOException;
 
 /**
  * Created by ud on 10/2/14.
@@ -52,24 +47,24 @@ public class Register extends ActionBarActivity{
     private Context ctx = Register.this ;
     private GoogleCloudMessaging gcm;
 
-    private String GCM_REG_ID;
+    //private String GCM_REG_ID;
     static final String TAG = "GCM-usage";
     private ProgressDialog progress;
 
-    public static final String PROPERTY_REG_ID = Config.PROPERTY_REG_ID;
-    private static final String PROPERTY_APP_VERSION = Config.PROPERTY_APP_VERSION;
+    //public static final String PROPERTY_REG_ID = Config.PROPERTY_REG_ID;
+    //private static final String PROPERTY_APP_VERSION = Config.PROPERTY_APP_VERSION;
 
     private RequestQueue mRequestQueue;
     private Cache cache ;
     private Network network;
-    private JsonArrayRequest req;
+    //private JsonArrayRequest req;
     private JsonObjectRequest jsonObjReq ;
 
     /**
      * Substitute you own sender ID here. This is the project number you got
      * from the API Console
      */
-    String SENDER_ID = Config.GCM_SENDER_ID ;
+    //String SENDER_ID = Config.GCM_SENDER_ID ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,21 +103,12 @@ public class Register extends ActionBarActivity{
             progress.setMessage("performing necessary tasks..");
             progress.show();
 
-            // Register for GCM
-            if( checkPlayServices(this) ){
-                gcm = GoogleCloudMessaging.getInstance(this);
-                GCM_REG_ID = Lib.getFromPrefs(PROPERTY_REG_ID, ctx);
-
-                if (GCM_REG_ID.length() < 10 ) {
-                   // Try to register in the background
-                    new registerDeviceinBackground().execute() ;
-                }else{
-                    doSignUP();
-                }
-
-            }else {
+            if(Lib.deviceIsConnected(ctx)){  /*if device has internet connectivity */
+                // Try to signpup
+                doSignUP();
+            }else{
                 progress.dismiss();
-                Toast.makeText(ctx, "No valid Google Play Services APK found.", Toast.LENGTH_LONG).show();
+                Lib.Alert(Lib.connErr, ctx);
             }
         }
     }
@@ -179,6 +165,7 @@ public class Register extends ActionBarActivity{
      * Stores the registration ID and app versionCode in the application's
      * shared preferences.
      */
+/*
     public class registerDeviceinBackground extends AsyncTask<String , Integer , String> {
         boolean hasRegistered = false ;
 
@@ -221,13 +208,14 @@ public class Register extends ActionBarActivity{
 
         }
     }
+*/
 
 
     /**
      * perform sign up with volley
      */
     private void doSignUP(){
-        String deviceID = Lib.getRegistrationId(ctx);
+        //String deviceID = Lib.getRegistrationId(ctx);
         String targetUrl = UriComponentsBuilder.fromUriString(Config.WEBSERVICE)
                 .path(Config.URL_REGISTER)
                 .queryParam("name", fullname)
@@ -235,7 +223,6 @@ public class Register extends ActionBarActivity{
                 .queryParam("phone", phone)
                 .queryParam("password", password)
                 .queryParam("country", country)
-                .queryParam("device_id", deviceID)  // New Device ID
                 .build()
                 .toUri().toString();
 
@@ -319,6 +306,7 @@ public class Register extends ActionBarActivity{
      * the Google Play Store or enable it in the device's system settings.
      * @param activity
      */
+/*
     private boolean checkPlayServices(Register activity) {
          int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(ctx);
@@ -334,6 +322,7 @@ public class Register extends ActionBarActivity{
         }
         return true;
     }
+*/
 
 
 }
