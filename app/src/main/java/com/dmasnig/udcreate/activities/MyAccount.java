@@ -317,7 +317,7 @@ public class MyAccount extends ActionBarActivity {
         }){
             /* Set Custom Headers */
             @Override
-            public HashMap<String, String> getHeaders() {
+            public HashMap<String, String> getParams() {
                 HashMap<String, String> headers = new HashMap<String, String>();
                 headers.put("AUTHORIZATION", apikey);
                 headers.put("PINCODE", pincode);
@@ -349,6 +349,7 @@ public class MyAccount extends ActionBarActivity {
 
     /* refresh account */
     public void refreshAccount() {
-        Lib.Toast("refresh baby", this);
+        Lib.Toast("refreshing..", this);
+        fetchFromServer();
     }
 }
