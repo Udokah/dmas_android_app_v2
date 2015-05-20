@@ -142,7 +142,7 @@ public class MyAccount extends ActionBarActivity {
             }
         }
 
-        /*if(cacheisValid){
+        if(cacheisValid){
             fetchFromCache();
         }else{
             if (Lib.deviceIsConnected(this)) {
@@ -151,14 +151,14 @@ public class MyAccount extends ActionBarActivity {
                 Lib.Alert("Please enable internet connectivity to update your account details", this);
                 fetchFromCache();
             }
-        }*/
+        }
 
         /* Fetch account update from server */
-        if (Lib.deviceIsConnected(this)) {
+       /* if (Lib.deviceIsConnected(this)) {
             fetchFromServer();
         } else {
             Lib.Alert("Please enable internet connectivity to update your account details", this);
-        }
+        }*/
     }
 
 
