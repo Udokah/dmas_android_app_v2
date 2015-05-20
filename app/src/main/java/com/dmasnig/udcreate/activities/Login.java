@@ -36,19 +36,18 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 public class Login extends ActionBarActivity {
 
-    private EditText formEmail ;
-    private EditText formPassword  ;
+    private EditText formEmail, formPassword ;
     private String email,password ;
     private Context ctx;
 
-    private String GCM_REG_ID;
+    //private String GCM_REG_ID;
     static final String TAG = "GCM-usage";
     private GoogleCloudMessaging gcm;
     private ProgressDialog progress;
     private String targetUrl ;
 
-    public static final String PROPERTY_REG_ID = Config.PROPERTY_REG_ID;
-    private static final String PROPERTY_APP_VERSION = Config.PROPERTY_APP_VERSION;
+    //public static final String PROPERTY_REG_ID = Config.PROPERTY_REG_ID;
+    //private static final String PROPERTY_APP_VERSION = Config.PROPERTY_APP_VERSION;
 
     private RequestQueue mRequestQueue;
     private Cache cache ;
@@ -60,7 +59,7 @@ public class Login extends ActionBarActivity {
      * Substitute you own sender ID here. This is the project number you got
      * from the API Console
      */
-    private String SENDER_ID = Config.GCM_SENDER_ID ;
+    //private String SENDER_ID = Config.GCM_SENDER_ID ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,7 +137,6 @@ public class Login extends ActionBarActivity {
                 .path(Config.URL_LOGIN)
                 .queryParam("email", email)
                 .queryParam("password", password)
-                .queryParam("device_id", GCM_REG_ID) // Send GCM id to server
                 .build()
                 .toUri().toString();
 
