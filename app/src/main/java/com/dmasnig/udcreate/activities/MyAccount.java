@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
@@ -61,6 +62,8 @@ public class MyAccount extends ActionBarActivity {
     private String apikey ;
     private TextView pincodeTextview ;
 
+    private Menu menu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,11 +93,21 @@ public class MyAccount extends ActionBarActivity {
         runUpdater() ;
     }
 
+    /* create refresh button */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.my_account_actionbar, menu);
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case android.R.id.home:
                 super.onBackPressed();
+                return true;
+            case R.id.action_refresh:
+                refreshAccount();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -129,7 +142,7 @@ public class MyAccount extends ActionBarActivity {
             }
         }
 
-        if(cacheisValid){
+        /*if(cacheisValid){
             fetchFromCache();
         }else{
             if (Lib.deviceIsConnected(this)) {
@@ -138,6 +151,13 @@ public class MyAccount extends ActionBarActivity {
                 Lib.Alert("Please enable internet connectivity to update your account details", this);
                 fetchFromCache();
             }
+        }*/
+
+        /* Fetch account update from server */
+        if (Lib.deviceIsConnected(this)) {
+            fetchFromServer();
+        } else {
+            Lib.Alert("Please enable internet connectivity to update your account details", this);
         }
     }
 
@@ -327,4 +347,8 @@ public class MyAccount extends ActionBarActivity {
     }
 
 
+    /* refresh account */
+    public void refreshAccount() {
+        Lib.Toast("refresh baby", this);
+    }
 }

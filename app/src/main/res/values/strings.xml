@@ -46,6 +46,8 @@
     <string name="app_not_available">Sorry, there\'s no web browser available</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="action_refresh">refresh</string>
+
     <string name="close_btn">close</string>
     <string name="testimony_hint">type your testimony</string>
 
