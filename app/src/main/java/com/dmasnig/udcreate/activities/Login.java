@@ -3,7 +3,6 @@ package com.dmasnig.udcreate.activities;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -11,7 +10,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.android.volley.Cache;
 import com.android.volley.Network;
@@ -30,15 +28,11 @@ import com.dmasnig.udcreate.databases.ORMDatabaseManager;
 import com.dmasnig.udcreate.databases.QuotesDatabase;
 import com.dmasnig.udcreate.utilities.Config;
 import com.dmasnig.udcreate.utilities.Lib;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.gcm.GoogleCloudMessaging;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.util.UriComponentsBuilder;
-
-import java.io.IOException;
 
 public class Login extends ActionBarActivity {
 
@@ -120,30 +114,13 @@ public class Login extends ActionBarActivity {
 
             progress.setMessage("Working...");
             progress.show();
-
-            // Register for GCM
-            if( checkPlayServices(this) ){
-                gcm = GoogleCloudMessaging.getInstance(this);
-                GCM_REG_ID = Lib.getFromPrefs(PROPERTY_REG_ID, ctx);
-
-                if (GCM_REG_ID.length() < 10 ) {
-                    // Try to register in the background
-                    new registerDeviceinBackground().execute() ;
-                }else{
-                    if(Lib.deviceIsConnected(ctx)){  /*if device has internet connectivity */
-                        // Try to login
-                        authenticateLogin();
-                    }else{
-                        progress.dismiss();
-                        Lib.Alert(Lib.connErr, ctx);
-                    }
-                }
-
-            }else {
+            if(Lib.deviceIsConnected(ctx)){  /*if device has internet connectivity */
+                // Try to login
+                authenticateLogin();
+            }else{
                 progress.dismiss();
-                Toast.makeText(ctx, "No valid Google Play Services APK found.", Toast.LENGTH_LONG).show();
+                Lib.Alert(Lib.connErr, ctx);
             }
-
 
         }
 
@@ -249,7 +226,7 @@ public class Login extends ActionBarActivity {
      * Stores the registration ID and app versionCode in the application's
      * shared preferences.
      */
-    private class registerDeviceinBackground extends AsyncTask<String , Integer , String> {
+    /*private class registerDeviceinBackground extends AsyncTask<String , Integer , String> {
         boolean hasRegistered = false ;
 
         @Override
@@ -289,14 +266,14 @@ public class Login extends ActionBarActivity {
             }
 
         }
-    }
+    }*/
 
     /**
      * check if Google Play service is installed on device
      * @param activity Login activity
      * @return boolean
      */
-    private boolean checkPlayServices(Login activity){
+    /*private boolean checkPlayServices(Login activity){
         int PLAY_SERVICES_RESOLUTION_REQUEST = 9000;
         int resultCode = GooglePlayServicesUtil.isGooglePlayServicesAvailable(ctx);
         if (resultCode != ConnectionResult.SUCCESS) {
@@ -310,7 +287,7 @@ public class Login extends ActionBarActivity {
             return false;
         }
         return true;
-    }
+    }*/
 
 }
 
