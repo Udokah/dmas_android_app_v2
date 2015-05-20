@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@drawable/about_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textview1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/copyright"
+            android:textSize="17sp"
+            android:typeface="sans"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/textview2"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_phone"
+            android:textSize="17sp"
+            android:typeface="sans"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:id="@+id/textview3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/contact_email"
+            android:textSize="17sp"
+            android:typeface="sans"
+            android:layout_marginTop="5dp"
+            android:textColor="@android:color/white"/>
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:id="@+id/textview4"
+            android:drawableBottom="@drawable/ic_image_developer"
+            android:layout_width="wrap_content"
+            android:textSize="17sp"
+            android:typeface="sans"
+            android:layout_height="wrap_content"
+            android:text="@string/developer"
+            android:gravity="center"
+            android:textColor="@android:color/white"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

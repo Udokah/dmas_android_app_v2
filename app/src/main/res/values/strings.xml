@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="open_helper_classname">ORMDatabaseHelper</string>
+
+    <string name="contact_phone">Phone: +234 (0) 803 794 9311</string>
+    <string name="contact_email">Email: support@dmas-nig.com</string>
+    <string name="copyright">copyright 2014 DMAS</string>
+    <string name="dialog_text">Are you sure of this ?</string>
+
+    <string name="dialog_no">No</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="dialog_close">close</string>
+
+    <string name="developer">Developed by UDcreate \n <u>www.udonline.net</u></string>
+
+    <string name="account_active">Loading...</string>
+    <string name="account_inactive">Loading...</string>
+    <string name="last_subscribed">Last Subscription: Loading...</string>
+    <string name="sub_type">Subscription type: Loading...</string>
+    <string name="sub_exp">Expires: Loading...</string>
+    <string name="subscribe_hint">Enter your pin</string>
+    <string name="btn_subscribe">Subscribe me</string>
+
+    <string name="app_name">DMAS</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="username">Nkwocha Udoka</string>
+    <string name="useremail">hello@udonline.net</string>
+    <string name="about">About</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="phone">Phone</string>
+    <string name="country">Country</string>
+    <string name="accept_terms">By creating an account, you are agreeing with our terms and conditions</string>
+    <string name="startup_register">Register</string>
+    <string name="startup_signin">Sign in</string>
+    <string name="startup_welcome">Divine Mercy App</string>
+    <string name="login_login">Login</string>
+    <string name="login_fpswd">Forgot password?</string>
+    <string name="register_fname">Fullname</string>
+    <string name="register_signup">Signup</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="close_btn">close</string>
+    <string name="testimony_hint">type your testimony</string>
+
+    <string name="item_price">Price: 3,000</string>
+
+    <string name="prayer_by_three">
+        You expired, Jesus, but the source of life gushed
+forth for souls
+and the ocean of mercy opened up for the
+whole world.\n \n
+O Fountain of Life, unfathomable Divine Mercy, \n
+envelop the whole world and empty Yourself out \n
+upon us.\n \n
+O Blood and Water, \n
+which gushed forth from the Heart of Jesus \n
+as a fountain of mercy for us,\n
+I trust in You.\n \n
+
+Holy God, Holy Mighty One, Holy Immortal One, \n
+Have mercy on us and on the whole world. (3times) \n
+JESUS, King of mercy, I trust in You! \n
+Amen \n \n
+
+*Note: In the official R. Catholic version, the last
+stanza should hasBeenRead as follows: \n
+"O Blood and Water which flowed out from the
+heart of Jesus \n
+as a Fountain of Mercy for us, I trust in You!.
+(3x) \n \n
+Jesus, I Trust in You." \n
+Amen.
+    </string>
+
+    <string name="about_divine_mercy_content">
+        The message of Divine Mercy was given to a
+Polish nun named Sister Faustina. It was
+revealed to her by Jesus in a private revelation
+that is fully approved by the Church. The
+message of Divine Mercy is not something that is
+new or additional to the Gospel message. \n
+In fact, it is the same core message presented in a
+particular way with a few new devotions. This
+novena is one of those devotions. \n
+St. Faustina reports in her diary that she
+transcribed the words of the novena as Jesus
+dictated them to her day-by-day beginning on
+Good Friday. \n
+While this novena can be prayed any time, it is
+fitting that this novena begins on the day that
+Jesus gave us His Life. Good Friday is the perfect
+time to begin meditating on the Mercy of God
+towards us who need His mercy so much. \n
+We end the novena on the eve of the Feast of
+Mercy, a feast day established by Pope John
+Paul II in response to St. Faustina’s revelation.
+This is a very important feast and the novena is
+an important part of our preparation for the
+Feast of Mercy, Divine Mercy Sunday. \n
+“The Lord told me to say this chaplet for nine
+days before the Feast of Mercy.  \n
+ It is to begin on Good Friday. ‘By this novena, I will grant every
+possible grace to souls.’”  (Diary 796) \n
+On April 30th, 2000 Pope John Paul II instituted
+Divine Mercy Sunday as an official feast of the
+Church. In doing this he said, “by this act today,
+I pass on the message of Divine Mercy to the
+new millennium. I pass it on because I want
+people to know the better face of God, and that
+of his Divine Mercy, and through it, the better
+face of their brethren. The light of the message
+of Divine Mercy which the Lord wished to renew
+in the world, will be as much a beacon of hope
+for the third millennium, as the apostles were in
+the first.” \n
+This is clearly a very important and powerful
+devotion. \n
+<strong>Purpose of the Devotion</strong>  \n
+You can pray the Divine Mercy Novena for any
+reason you want. God’s Mercy is relevant and
+effective in all parts of our lives. However, there
+are some specific reasons you may want to call
+on the Divine Mercy in your prayer life. \n
+For the dying \n
+For Poland \n
+For forgiveness and mercy \n
+For conversion \n
+For healing \n
+In preparation for Divine Mercy Sunday
+So, let us join together and beg for God’s Divine
+Mercy together through this Divine Mercy
+Novena!
+    </string>
+
+    <string name="pray_title">
+        Prayer To St. Faustina
+    </string>
+
+    <string name="prayer_to_st_faustina">
+        O Jesus, who filled Saint Faustina with profound veneration for the boundless mercy,\n
+        deign, if it be, Your holy will, to grant me through her intercession,\n
+        the grace for which I fervently pray… May sins render me unworthy for Your mercy,\n
+        but be mindful of St. Faustina’s sacrifice and self-denial,\n
+        and reward her virtues by granting the petition, which, with childlike trust,\n
+        I present, to You through her intercession.
+    </string>
+
+    <string name="concluding_prayer">
+        Concluding Prayer \n \n
+        I fly to Your Mercy, Compassionate God, Who alone are good.
+        Although my misery is great and my offences are many,
+        I trust in Your Mercy because You are the God of Mercy,
+        and it has never been heard of in all ages,
+        nor do Heaven or Earth remember,
+        that a soul trusting in Your Mercy has been disappointed. (State your intentions)
+
+        \n \n
+
+      Jesus, Friend of a lonely heart, You are my haven.
+        You are my peace. You are my salvation. \n
+        You are my serenity in moments of struggle and amidst an ocean of doubts. \n
+        Amen
+    </string>
+
+    <string name="for_the_sake_prayer">
+        For the sake of His sorrowful passion, \n
+have mercy on us and on the \n
+whole world.\n
+    </string>
+
+    <string name="closing_prayer">
+        I fly to Your Mercy, Compassionate God, Who alone are good. Although my misery is great and my offences are many, I trust in Your Mercy because You are the God of Mercy, and it has never been heard of in all ages, nor do Heaven or Earth remember, that a soul trusting in Your Mercy has been disappointed. (State your intentions)
+\n
+Jesus, Friend of a lonely heart, You are my haven. You are my peace. You are my salvation. You are my serenity in moments of struggle and amidst an ocean of doubts. Amen
+    </string>
+
+    <string name="from_diary">
+        From the Diary of St. Faustina
+    </string>
+
+    <string name="title_prayer">
+        Title of the prayer
+    </string>
+
+</resources>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@drawable/testimonies_bg"
+              android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/testimonies_list"
+        android:layout_alignParentTop="true"
+        android:dividerHeight="25dp"
+        android:padding="10dp"
+        android:cacheColorHint="@android:color/transparent"
+        android:scrollbars="none"
+        android:layout_marginBottom="52dp"
+        android:divider="@android:color/transparent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:padding="7dp"
+        android:weightSum="100">
+
+        <EditText
+            style="@style/EditTextAppTheme"
+            android:layout_weight="20"
+            android:maxLines="4"
+            android:id="@+id/textbox"
+            android:inputType="textCapSentences|textMultiLine"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:hint="@string/testimony_hint"
+            android:layout_width="match_parent"/>
+
+        <ImageButton
+            android:id="@+id/send_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="80"
+            android:contentDescription="send button"
+            android:background="@drawable/btn_white_selector"
+            android:src="@drawable/ic_send"/>
+
+        </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+           xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="btnRed" parent="@style/_btnRed"/>
+
+    <style name="_btnRed" parent="Theme.AppCompat.Light">
+
+        <item name="android:buttonStyle">@style/ButtonbtnRed</item>
+
+        <item name="android:imageButtonStyle">@style/ImageButtonbtnRed</item>
+
+    </style>
+
+    <!-- ActionBar styles Blue-->
+    <style name="widget.blue.actionbar" parent="@style/Widget.AppCompat.ActionBar">
+       <item name="android:background">@color/orange</item>
+        <!-- Support library compatibility -->
+        <item name="background">@color/orange</item>
+    </style>
+
+
+
+</resources>

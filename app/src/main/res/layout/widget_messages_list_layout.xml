@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:layout_margin="10dp"
+                android:id="@+id/ListWrapper"
+                android:paddingTop="45dp"
+                android:paddingRight="9dp"
+                android:paddingLeft="9dp"
+                android:paddingBottom="40dp"
+                android:background="@drawable/scroll_bg">
+
+    <ImageView
+        android:id="@+id/msgicon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="0dp"
+        android:paddingRight="5dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:src="@drawable/ic_bible_open"
+        android:paddingBottom="5dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="false"
+        android:contentDescription="@string/hello_world" />
+
+    <TextView
+        android:id="@+id/snippet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/msgicon"
+        android:textColor="@android:color/black"
+        android:text="@string/accept_terms"
+        android:paddingTop="8dp"
+        android:textStyle="normal"
+        android:clickable="false"
+        android:focusable="false"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/snippet"
+        android:clickable="false"
+        android:focusable="false"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/startup_register"
+        android:textSize="12sp" />
+
+</RelativeLayout>

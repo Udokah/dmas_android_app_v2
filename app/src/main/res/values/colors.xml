@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="btnblue_color">#33b5e5</color>
+    <color name="btnred_color">#cc0000</color>
+    <color name="trans_black">#60333333</color>
+    <color name="custom_hint_color">#808080</color>
+    <color name="dropdown_color">#33b5e5</color>
+    <color name="orange">#e67e22</color>
+    <color name="apptheme_color">#0099cc</color>
+    <color name="blue_light">#DFF3FB</color>
+    <color name="blue_deep">#ACDFF5</color>
+
+    <color name="holo_blue">@color/holo_blue_light</color>
+    <color name="holo_divider">#6E6E6E</color>
+
+    <drawable name="notification_item_background_color">#ff111111</drawable>
+    <drawable name="notification_item_background_color_pressed">#ff454545</drawable>
+
+    <color name="group_button_dialog_pressed_holo_dark">#46c5c1ff</color>
+    <color name="group_button_dialog_focused_holo_dark">#2699cc00</color>
+
+    <color name="holo_blue_light">#ff33b5e5</color>
+
+    <color name="drawer_bg_light">#555</color>
+    <color name="drawer_divider">#333</color>
+    <color name="drawer_bg">#262626</color>
+
+    <color name="silver">#ecf0f1</color>
+
+    <color name="clouds">#D8E0E2</color>
+
+    <color name="second_grey">#ff999999</color>
+    <color name="card_white">#ffffffff</color>
+    <color name="card_shadow">#8c666666</color>
+
+    <color name="download_green">#99CC00</color>
+
+
+</resources>

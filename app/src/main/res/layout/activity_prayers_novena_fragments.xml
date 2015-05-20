@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"
+                android:background="#ffe3e3e3"
+                android:scrollbars="none"
+                android:padding="9dp">
+<LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:padding="5dp"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/novena_prayer_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:padding="6dp"
+        android:background="@drawable/resources_grid_normal"
+        android:drawableLeft="@drawable/ic_image_dm"
+        android:drawableRight="@drawable/ic_image_faustina"
+        android:layout_marginBottom="7dp"
+        android:text="@string/title_prayer"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview1"
+        android:gravity="center"
+        android:text="@string/for_the_sake_prayer"
+        android:padding="5dp"
+        android:textSize="14sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="0dp"
+        android:background="@drawable/downloads_listview_pressed"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/textview2"
+        android:text="@string/from_diary"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:background="@drawable/resources_grid_normal"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.1dip"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:id="@+id/novena_diary_entry"
+        android:text="@string/for_the_sake_prayer"
+        android:padding="5dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/resources_grid_normal"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/pray_title"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:id="@+id/textview3"
+        android:textColor="@android:color/black"
+        android:background="@drawable/resources_grid_pressed"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/prayer_to_st_faustina"
+        android:padding="5dp"
+        android:id="@+id/textview4"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/resources_grid_pressed"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/closing_prayer"
+        android:gravity="center"
+        android:text="@string/closing_prayer"
+        android:padding="5dp"
+        android:textSize="15sp"
+        android:visibility="gone"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="2dp"
+        android:background="@drawable/downloads_listview_pressed"/>
+
+</LinearLayout>
+
+
+</ScrollView>

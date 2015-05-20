@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@drawable/divine_mercy_image"
+    tools:context=".Startup">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/startup_welcome"
+                android:layout_gravity="center|center_horizontal"
+                android:gravity="center"
+                android:textColor="@android:color/white"
+
+                android:textSize="30sp"
+                android:padding="10dp"
+                android:background="@color/trans_black"
+                android:layout_marginBottom="20dp"
+                />
+
+            <Button
+                style="@style/ButtonbtnBlue"
+                android:text="@string/startup_register"
+                android:onClick="actionRegister"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                style="@style/ButtonbtnRed"
+                android:onClick="actionLogin"
+                android:textColor="@android:color/white"
+                android:text="@string/startup_signin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+</RelativeLayout>

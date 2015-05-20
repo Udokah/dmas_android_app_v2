@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/testimonies_wrapper"
+              android:layout_margin="5dp"
+              android:background="@drawable/ic_bubbles"
+              android:padding="10dp">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullname"
+        android:text="Thomas Brown"
+        android:textColor="@color/orange"
+        android:textSize="16sp"
+        android:drawableRight="@drawable/ic_msg"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/accept_terms"
+        android:id="@+id/message"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/send_date"
+        android:layout_gravity="right"
+        android:text="5 days ago"
+        android:textColor="@color/drawer_bg"
+        android:textSize="14sp"/>
+
+</LinearLayout>

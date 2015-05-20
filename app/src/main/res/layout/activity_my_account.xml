@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+<LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:background="@color/clouds"
+              android:padding="15dp"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/account_status"
+        style="@style/account_active_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="20dp"
+        android:textStyle="bold"
+        android:typeface="sans"
+        android:textSize="25sp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:id="@+id/last_subscribed"
+        style="@style/account_textviews_style"
+        android:text="@string/last_subscribed"/>
+
+    <TextView
+        android:id="@+id/subscription_type"
+        style="@style/account_textviews_style"
+        android:text="@string/sub_type"/>
+
+    <TextView
+        android:id="@+id/subscription_expires"
+        style="@style/account_textviews_style"
+        android:text="@string/sub_exp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/downloads_listview_selected">
+
+        <EditText
+            style="@style/EditTextAppTheme"
+            android:id="@+id/pincode"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:hint="@string/subscribe_hint"
+            android:layout_marginBottom="6dp"/>
+
+        <Button
+            style="@style/ButtonbtnBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="subscribeBtnPressed"
+            android:textColor="@android:color/white"
+            android:text="@string/btn_subscribe"/>
+
+
+        </LinearLayout>
+
+
+</LinearLayout>
+
+</ScrollView>
+

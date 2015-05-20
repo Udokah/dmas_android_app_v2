@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:background="@drawable/drawer_list_selector">
+
+    <ImageView
+        android:id="@+id/menuIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:paddingLeft="10dp"
+        android:paddingTop="10dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/hello_world" />
+
+    <TextView
+        android:id="@+id/menuItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/menuIcon"
+        android:clickable="false"
+        android:focusable="false"
+        android:textColor="@color/silver"
+        android:layout_centerVertical="true"
+        android:text="@string/startup_register"
+        android:textSize="19sp" />
+
+</RelativeLayout>

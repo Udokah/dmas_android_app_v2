@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@drawable/testimonies_bg">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="9dp"
+        android:background="@color/trans_black">
+
+        <TextView
+            style="@style/content_text"
+            android:id="@+id/prayer_by_three"
+            android:text="@string/prayer_by_three"/>
+
+    </LinearLayout>
+
+</ScrollView>

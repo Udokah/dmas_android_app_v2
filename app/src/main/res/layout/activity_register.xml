@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="vertical"
+                  android:padding="20dp"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+
+                <EditText style="@style/textbox"
+                          android:id="@+id/fullname"
+                          android:hint="@string/register_fname"
+                          android:inputType="textCapWords"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"/>
+
+            <EditText style="@style/textbox"
+                      android:id="@+id/email"
+                      android:inputType="textEmailAddress"
+                      android:hint="@string/email"
+                      android:layout_marginTop="10dp"/>
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:weightSum="100"
+                          android:layout_marginTop="10dp"
+                          android:orientation="horizontal">
+
+                <Spinner style="@style/SpinnerAppTheme"
+                         android:id="@+id/code"
+                         android:entries="@array/call_codes"
+                         android:layout_weight="70"
+                         android:layout_gravity="bottom"
+                         android:layout_height="wrap_content"
+                         android:layout_width="match_parent"/>
+
+                <EditText style="@style/textbox"
+                          android:id="@+id/phone"
+                          android:gravity="bottom"
+                          android:layout_gravity="bottom"
+                          android:layout_weight="30"
+                          android:inputType="phone"
+                          android:hint="@string/phone"/>
+            </LinearLayout>
+
+            <EditText style="@style/textbox"
+                      android:id="@+id/password"
+                      android:inputType="textPassword"
+                      android:hint="@string/password"
+                      android:layout_marginTop="20dp"/>
+
+            <Spinner style="@style/SpinnerAppTheme"
+                     android:id="@+id/country"
+                     android:entries="@array/countries_array"
+                     android:tag="@string/country"
+                     android:layout_marginTop="20dp"
+                     android:prompt="@string/country"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"/>
+
+            <Button style="@style/ButtonbtnBlue"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/register_signup"
+                    android:onClick="signupBtnPressed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            <TextView
+                      android:layout_marginTop="5dp"
+                      android:padding="5dp"
+                      android:gravity="center"
+                      android:textColor="@android:color/darker_gray"
+                      android:layout_marginBottom="5dp"
+                      android:text="@string/accept_terms"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</ScrollView>

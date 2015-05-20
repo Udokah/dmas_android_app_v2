@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_height="match_parent"
+                      android:layout_width="match_parent"
+                      android:background="@drawable/trans_divine_mercy_bg">
+
+<LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:padding="9dp"
+              android:background="@color/trans_black">
+
+    <TextView
+        style="@style/content_text"
+        android:id="@+id/about_dm_content"
+        android:text="@string/about_divine_mercy_content"/>
+
+</LinearLayout>
+
+</ScrollView>
