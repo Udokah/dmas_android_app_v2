@@ -3,6 +3,7 @@
 
     <string-array name="settings_menu">
         <item>My account</item>
+        <item>Subscribe Online</item>
         <item>Delete quotes</item>
         <item>Logout</item>
         <item>About</item>

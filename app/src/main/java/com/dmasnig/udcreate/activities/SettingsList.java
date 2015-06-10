@@ -37,6 +37,7 @@ public class SettingsList extends ActionBarActivity {
 
     private int[] mIcons = new int[]{
             R.drawable.ic_account,
+            R.drawable.ic_pay,
             R.drawable.ic_delete,
             R.drawable.ic_log_out ,
             R.drawable.ic_about
@@ -123,6 +124,10 @@ public class SettingsList extends ActionBarActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void openWebLink(){
+
     }
 
     private void confirmDelete(){
