@@ -135,7 +135,8 @@ public class SettingsList extends ActionBarActivity {
      * can pay
      */
     private void openWebLink(){
-        Uri uri = Uri.parse(Config.server + Config.payment_url);
+        String apikey = Lib.getFromPrefs(Config.PROPERTY_API_KEY,context);
+        Uri uri = Uri.parse(Config.server + Config.payment_url + "?user=" + apikey);
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }

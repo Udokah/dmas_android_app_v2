@@ -216,7 +216,7 @@ public class MyAccount extends ActionBarActivity {
             @Override
             public HashMap<String, String> getHeaders() {
                 HashMap<String, String> headers = new HashMap<String, String>();
-                headers.put("AUTHORIZATION", apikey);
+                headers.put("AUTHORIZATION", apikey); // set api key in header
                 return headers;
             }
         };
