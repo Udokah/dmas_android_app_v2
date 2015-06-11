@@ -113,15 +113,7 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".recievers.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND" >
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <category android:name="com.example.gcm" />
-            </intent-filter>
-        </receiver>
-        <service android:name=".services.GcmIntentService" />
+
 
         <service android:name=".services.BackgroundService" />
         <receiver android:name="com.commonsware.cwac.wakeful.AlarmReceiver" >
@@ -132,13 +124,6 @@
             <meta-data
                 android:name="com.commonsware.cwac.wakeful"
                 android:resource="@xml/wakeful" />
-        </receiver>
-        <receiver
-            android:name=".recievers.ConnectivityReceiver"
-            android:enabled="false" >
-            <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
-            </intent-filter>
         </receiver>
 
     </application>

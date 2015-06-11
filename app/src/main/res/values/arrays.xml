@@ -125,9 +125,9 @@ Set free from everything, rest close to My Heart, not allowing your peace to be 
         <item>News Feed</item>
         <item>Daily Quotes</item>
         <item>Gallery</item>
-        <item>Downloads</item>
+        <!--<item>Downloads</item>-->
         <item>Testimonials</item>
-        <item>Resources</item>
+        <!--<item>Resources</item>-->
         <item>Prayers</item>
     </string-array>
 

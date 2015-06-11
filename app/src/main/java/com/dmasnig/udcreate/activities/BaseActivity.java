@@ -28,7 +28,6 @@ import com.dmasnig.udcreate.fragments.NewsfeedFragment;
 import com.dmasnig.udcreate.fragments.PrayersFragment;
 import com.dmasnig.udcreate.fragments.ResourcesFragment;
 import com.dmasnig.udcreate.fragments.TestimoniesFragment;
-import com.dmasnig.udcreate.listeners.DailyListener;
 import com.dmasnig.udcreate.utilities.Config;
 import com.dmasnig.udcreate.utilities.Lib;
 import com.rampo.updatechecker.UpdateChecker;
@@ -53,9 +52,9 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
             R.drawable.ic_menu_newsfeed,
             R.drawable.ic_bible_open,
             R.drawable.ic_menu_gallery,
-            R.drawable.ic_download_start,
+//            R.drawable.ic_download_start,
             R.drawable.ic_menu_messages,
-            R.drawable.ic_menu_shop,
+//            R.drawable.ic_menu_shop,
             R.drawable.ic_menu_prayers
     };
 
@@ -74,7 +73,7 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
         super.onCreate(savedInstanceState);
 
         /* Start Alarm Reciever */
-        WakefulIntentService.scheduleAlarms(new DailyListener(), this, false);
+        //WakefulIntentService.scheduleAlarms(new DailyListener(), this, false);
 
 
         setContentView(R.layout.activity_base);
@@ -93,7 +92,7 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
 
         // Each row in the list stores country name, count and flag
         mList = new ArrayList<HashMap<String, String>>();
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 5; i++) {
             HashMap<String, String> hm = new HashMap<String, String>();
             hm.put(ITEMS, mItems[i]);
             hm.put(ICONS, Integer.toString(mIcons[i]));
@@ -248,19 +247,19 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
                 ft.replace(R.id.content_frame, galleryFragment);
                 break;
 
-            case 3: DownloadsFragment downloadsFragment = new DownloadsFragment();
-                ft.replace(R.id.content_frame, downloadsFragment);
-                break;
+//            case 3: DownloadsFragment downloadsFragment = new DownloadsFragment();
+//                ft.replace(R.id.content_frame, downloadsFragment);
+//                break;
 
-            case 4: TestimoniesFragment testimoniesFragment = new TestimoniesFragment();
+            case 3: TestimoniesFragment testimoniesFragment = new TestimoniesFragment();
                 ft.replace(R.id.content_frame, testimoniesFragment);
                 break;
 
-            case 5: ResourcesFragment resourcesFragment = new ResourcesFragment();
-                ft.replace(R.id.content_frame, resourcesFragment);
-                break;
+//            case 5: ResourcesFragment resourcesFragment = new ResourcesFragment();
+//                ft.replace(R.id.content_frame, resourcesFragment);
+//                break;
 
-            case 6: PrayersFragment prayersFragment = new PrayersFragment();
+            case 5: PrayersFragment prayersFragment = new PrayersFragment();
                 ft.replace(R.id.content_frame, prayersFragment);
                 break;
 
