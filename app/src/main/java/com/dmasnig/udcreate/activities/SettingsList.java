@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -20,6 +21,7 @@ import android.widget.TextView;
 
 import com.dmasnig.udcreate.R;
 import com.dmasnig.udcreate.databases.ORMDatabaseManager;
+import com.dmasnig.udcreate.utilities.Config;
 import com.dmasnig.udcreate.utilities.Lib;
 
 import java.io.File;
@@ -101,12 +103,14 @@ public class SettingsList extends ActionBarActivity {
                     case 0: intent = new Intent(context, MyAccount.class);
                         startActivity(intent);
                         break;
-                    case 1: confirmDelete() ;
+                    case 1: openWebLink();
                         break;
-                    case 2: intent = new Intent(context, AboutDivineMercy.class);
+                    case 2: confirmDelete();
+                        break;
+                    case 3: intent = new Intent(context, AboutDivineMercy.class);
                         logout();
                         break;
-                    case 3: intent = new Intent(context, About.class);
+                    case 4: intent = new Intent(context, About.class);
                         startActivity(intent);
                         break;
                 }
@@ -126,8 +130,14 @@ public class SettingsList extends ActionBarActivity {
         }
     }
 
+    /**
+     * Open Link to Payment gateway where users
+     * can pay
+     */
     private void openWebLink(){
-
+        Uri uri = Uri.parse(Config.server + Config.payment_url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 
     private void confirmDelete(){

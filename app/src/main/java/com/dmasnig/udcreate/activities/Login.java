@@ -120,9 +120,7 @@ public class Login extends ActionBarActivity {
                 progress.dismiss();
                 Lib.Alert(Lib.connErr, ctx);
             }
-
         }
-
     }
 
 

@@ -9,6 +9,7 @@ public class Config extends Activity{
     //public static final String server = "http://192.168.43.100/Dmas-Nig" ;
     public static final String server = "http://dmas-nig.com" ;
     public static final String WEBSERVICE = server + "/engine/webservice/v1" ;
+    public static final String payment_url = "/subscribe-online";
 
     public static final String URL_REGISTER = "/register" ;
     public static final String URL_LOGIN =  "/login" ;
