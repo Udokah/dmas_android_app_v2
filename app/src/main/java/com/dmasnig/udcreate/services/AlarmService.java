@@ -55,14 +55,12 @@ public class AlarmService extends Service {
     private final int mNotificationId = 5514;
 
     // Build your notification widget
-    void createNotification(String message, String date) {
+    void createNotification(String message) {
 
         // Specify the intent to be triggered when the Notification is clicked on
         // IMPORTANT: should open them message fragment
         Intent resultIntent = new Intent(this, BaseActivity.class);
-        resultIntent.putExtra("show-fragment", 2) ; // show messages fragment
-        resultIntent.putExtra("message", message);
-        resultIntent.putExtra("date", date);
+        resultIntent.putExtra("show-fragment", 1) ; // show messages fragment
         resultIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent resultPendingIntent =
@@ -146,16 +144,14 @@ public class AlarmService extends Service {
             Date now = new Date();
             String date = new SimpleDateFormat("EEE, d MMM yyyy").format(now);
 
-
-
             /* Store in Database */
-            /*QuotesDatabase quote = new QuotesDatabase();
+            QuotesDatabase quote = new QuotesDatabase();
             quote.setMessage(message);
             quote.setDate(date);
-            quote.setHasBeenRead(false);
-            ORMDatabaseManager.getInstance().addQuote(quote);*/
+            quote.setHasBeenRead(true);
+            ORMDatabaseManager.getInstance().addQuote(quote);
 
-            createNotification(message,date); // create notification here
+            createNotification(message); // create notification here
 
             /*Update preferences set fetched to true */
            /* SharedPreferences prefs = Lib.getDevicesPreferences(this);
@@ -199,7 +195,7 @@ public class AlarmService extends Service {
         public void run() {
             new Thread(new Runnable() {
                 public void run() {
-                    if(!itsTime()){
+                    if(itsTime()){
                         fetchMessageFromServer();
                     }
                 }

@@ -147,26 +147,26 @@ public class MessageFragment extends ListFragment {
             holder.wrapper.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-                    ViewHolder holder1 = (ViewHolder)v.getTag();
-                    holder1.Txtmsg.setText(fulltext);
+                    //ViewHolder holder1 = (ViewHolder)v.getTag();
+                    //holder1.Txtmsg.setText(fulltext);
                 }
             });
 
             TextView messageText = (TextView) convertView.findViewById(R.id.snippet);
             TextView timeText = (TextView) convertView.findViewById(R.id.date);
 
-            String substr = usermessages.message ;
+          /*  String substr = usermessages.message ;
             int textlength = 50 ;
 
             if( substr.length() > textlength ){
                 substr = substr.substring(0, textlength) + "..." ;
-            }
+            }*/
 
             // Apply fonts
             Typeface myTypeface = Typeface.createFromAsset( context.getAssets(), "fonts/droidsans.ttf");
             messageText.setTypeface(myTypeface);
 
-            messageText.setText(substr);
+            messageText.setText(usermessages.message);
             timeText.setText(usermessages.time);
 
             return convertView;
@@ -203,11 +203,11 @@ public class MessageFragment extends ListFragment {
                 messageData msgobj = new messageData();
 
                 /* Show only messages that have been read */
-                if(quotesDatabaseList.get(i).getHasBeenRead()) {
+                //if(quotesDatabaseList.get(i).getHasBeenRead()) {
                     msgobj.message = quotesDatabaseList.get(i).getMessage();
                     msgobj.time = quotesDatabaseList.get(i).getDate();
                     messageList.add(msgobj);
-                }
+                //}
             }
             MESSAGE_QUOTES = messageList ;
             return null ;

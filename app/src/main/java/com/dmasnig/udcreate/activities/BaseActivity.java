@@ -171,36 +171,9 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
 
         accountName.setText(ACCOUNTNAME);
         accountEmail.setText(ACCOUNTEMAIL);
-
-        String not_message, not_date;
-        if(savedInstanceState == null){
-            Bundle extras = getIntent().getExtras();
-            if(extras == null){
-                not_message = not_date = null;
-            } else {
-                not_message = extras.getString("message");
-                not_date = extras.getString("date");
-            }
-
-        } else {
-            not_message = (String) savedInstanceState.getSerializable("message");
-            not_date = (String) savedInstanceState.getSerializable("date");
-        }
-
-        if(not_message != null && not_date != null){
-            saveMessage(not_message,not_date);
-        }
-
     }
 
-    private void saveMessage(String message, String date){
-        Log.i(date,message);
-        QuotesDatabase quote = new QuotesDatabase();
-        quote.setMessage(message);
-        quote.setDate(date);
-        quote.setHasBeenRead(false);
-        ORMDatabaseManager.getInstance().addQuote(quote);
-    }
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
