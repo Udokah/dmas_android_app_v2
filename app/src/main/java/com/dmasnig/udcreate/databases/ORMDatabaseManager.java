@@ -1,9 +1,7 @@
 package com.dmasnig.udcreate.databases;
 
 import android.content.Context;
-
 import com.j256.ormlite.table.TableUtils;
-
 import java.sql.SQLException;
 import java.util.List;
 

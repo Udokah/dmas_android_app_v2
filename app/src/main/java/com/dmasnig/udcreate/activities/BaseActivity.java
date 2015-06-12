@@ -1,14 +1,17 @@
 package com.dmasnig.udcreate.activities;
 
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.support.v4.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,6 +24,8 @@ import android.widget.TextView;
 
 import com.commonsware.cwac.wakeful.WakefulIntentService;
 import com.dmasnig.udcreate.R;
+import com.dmasnig.udcreate.databases.ORMDatabaseManager;
+import com.dmasnig.udcreate.databases.QuotesDatabase;
 import com.dmasnig.udcreate.fragments.DownloadsFragment;
 import com.dmasnig.udcreate.fragments.GalleryFragment;
 import com.dmasnig.udcreate.fragments.MessageFragment;
@@ -28,6 +33,7 @@ import com.dmasnig.udcreate.fragments.NewsfeedFragment;
 import com.dmasnig.udcreate.fragments.PrayersFragment;
 import com.dmasnig.udcreate.fragments.ResourcesFragment;
 import com.dmasnig.udcreate.fragments.TestimoniesFragment;
+import com.dmasnig.udcreate.services.TimeService;
 import com.dmasnig.udcreate.utilities.Config;
 import com.dmasnig.udcreate.utilities.Lib;
 import com.rampo.updatechecker.UpdateChecker;
@@ -66,7 +72,6 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
     private SimpleAdapter mAdapter;
     final private String ITEMS = "menuItem";
     final private String ICONS = "menuIcon";
-    private String showFragment = null ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -74,6 +79,12 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
 
         /* Start Alarm Reciever */
         //WakefulIntentService.scheduleAlarms(new DailyListener(), this, false);
+
+        /**
+         * Start The Alarm Service
+         */
+        startService(new Intent(this, TimeService.class));
+        registerReceiver();
 
 
         setContentView(R.layout.activity_base);
@@ -143,7 +154,6 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
 
         // Enabling Up navigation
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         // Setting the adapter to the listView
         mDrawerList.setAdapter(mAdapter);
@@ -162,29 +172,34 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
         accountName.setText(ACCOUNTNAME);
         accountEmail.setText(ACCOUNTEMAIL);
 
-        /**
-         * App update checker
-         * https://github.com/rampo/UpdateChecker
-         */
-        UpdateChecker checker = new UpdateChecker(this);
-        checker.setStore(Store.GOOGLE_PLAY);
-        checker.setNotice(Notice.DIALOG);
-        checker.start();
+        String not_message, not_date;
+        if(savedInstanceState == null){
+            Bundle extras = getIntent().getExtras();
+            if(extras == null){
+                not_message = not_date = null;
+            } else {
+                not_message = extras.getString("message");
+                not_date = extras.getString("date");
+            }
 
-        try {
-            showFragment = getIntent().getExtras().getString("showfragment");
-        }catch (Exception e){
-            e.printStackTrace();
+        } else {
+            not_message = (String) savedInstanceState.getSerializable("message");
+            not_date = (String) savedInstanceState.getSerializable("date");
         }
 
-
-        if( showFragment == null ){
-            showFragment(0) ;
-        }
-        else{
-            showFragment(Integer.parseInt(showFragment)) ;
+        if(not_message != null && not_date != null){
+            saveMessage(not_message,not_date);
         }
 
+    }
+
+    private void saveMessage(String message, String date){
+        Log.i(date,message);
+        QuotesDatabase quote = new QuotesDatabase();
+        quote.setMessage(message);
+        quote.setDate(date);
+        quote.setHasBeenRead(false);
+        ORMDatabaseManager.getInstance().addQuote(quote);
     }
 
     @Override
@@ -281,6 +296,59 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
     @Override
     public void onFragmentInteraction(String id){
 
+    }
+
+
+    /**
+     * Alarm Stuff
+     */
+    private final String BROADCAST_ACTION = "com.example.VIEW_ACTION";
+
+    // Receive the action from the notification item when its clicked
+    // This receiver can be used to receive intents from other applications as well not just our Notification
+    BroadcastReceiver notifyServiceReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            //intent, from the arguments will contain the parameters from the Notification used to trigger our IntentFilter
+            startActivityIfNeeded(new Intent(getApplicationContext(), BaseActivity.class), 1);
+        }
+    };
+
+    // Register the Intent Receiver with tha Broadcast action it's to be called with
+    private void registerReceiver() {
+        IntentFilter intentFilter = new IntentFilter(BROADCAST_ACTION);
+        registerReceiver(notifyServiceReceiver, intentFilter);
+    }
+
+    private void unregisterReceiver() {
+        try {
+            this.unregisterReceiver(notifyServiceReceiver);
+        } catch (Exception e) {
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        unregisterReceiver();
+        super.onDestroy();
+    }
+
+    @Override
+    protected void onPause() {
+        unregisterReceiver();
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        registerReceiver();
+        Bundle extras = getIntent().getExtras();
+        if(extras != null){
+            showFragment(1);
+        }else{
+            showFragment(0);
+        }
+        super.onResume();
     }
 }
 

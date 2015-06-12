@@ -22,7 +22,7 @@
     <string name="subscribe_hint">Enter your pin</string>
     <string name="btn_subscribe">Subscribe me</string>
 
-    <string name="app_name">DMAS</string>
+    <string name="app_name">Divine Mercy</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="username">Nkwocha Udoka</string>
@@ -35,7 +35,7 @@
     <string name="accept_terms">By creating an account, you are agreeing with our terms and conditions</string>
     <string name="startup_register">Register</string>
     <string name="startup_signin">Sign in</string>
-    <string name="startup_welcome">Divine Mercy App</string>
+    <string name="startup_welcome">Divine Mercy</string>
     <string name="login_login">Login</string>
     <string name="login_fpswd">Forgot password?</string>
     <string name="register_fname">Fullname</string>
