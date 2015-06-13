@@ -247,7 +247,7 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
 //                ft.replace(R.id.content_frame, resourcesFragment);
 //                break;
 
-            case 5: PrayersFragment prayersFragment = new PrayersFragment();
+            case 4: PrayersFragment prayersFragment = new PrayersFragment();
                 ft.replace(R.id.content_frame, prayersFragment);
                 break;
 
