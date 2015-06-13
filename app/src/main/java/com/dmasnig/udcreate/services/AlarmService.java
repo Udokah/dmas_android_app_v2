@@ -78,7 +78,7 @@ public class AlarmService extends Service {
                         .setSmallIcon(R.drawable.ic_launcher)
                         .setContentTitle("New Prayer Message")
                         .setAutoCancel(true)
-                        .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.song))
+                        .setSound(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.notification_song))
                         //.setDefaults(Notification.DEFAULT_SOUND)
                         .setVibrate(pattern)
                         .setNumber(1)
