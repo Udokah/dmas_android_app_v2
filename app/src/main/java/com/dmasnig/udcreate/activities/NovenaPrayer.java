@@ -21,7 +21,7 @@ import com.dmasnig.udcreate.R;
 /**
  * Created by ud on 10/11/14.
  */
-public class NovenaPrayers extends ActionBarActivity {
+public class NovenaPrayer extends ActionBarActivity {
 
         // When requested, this adapter returns a DemoObjectFragment,
         // representing an object in the collection.
@@ -33,8 +33,7 @@ public class NovenaPrayers extends ActionBarActivity {
             setContentView(R.layout.activity_faustina_novena);
 
             ActionBar actionBar = getSupportActionBar();
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeButtonEnabled(true);
+
             actionBar.setTitle("Nine Days Novena To St. Faustina");
 
             // ViewPager and its adapters use support library
@@ -62,6 +61,9 @@ public class NovenaPrayers extends ActionBarActivity {
                 }
 
             };
+
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeButtonEnabled(true);
 
         }
 

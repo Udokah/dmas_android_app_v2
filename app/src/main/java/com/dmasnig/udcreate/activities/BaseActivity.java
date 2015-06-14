@@ -211,7 +211,7 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
         return super.onKeyDown(keyCode, event);
     }
 
-    public void showFragment(int position) {
+    private void showFragment(int position) {
 
         getSupportActionBar().setTitle(mItems[position]);
 
@@ -260,7 +260,7 @@ public class BaseActivity extends ActionBarActivity implements MessageFragment.O
     }
 
     // Highlight the selected country
-    public void highlightSelectedItem(){
+    private void highlightSelectedItem(){
         int selectedItem = mDrawerList.getCheckedItemPosition();
             mDrawerList.setItemChecked(selectedItem, true);
     }

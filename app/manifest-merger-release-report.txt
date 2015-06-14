@@ -101,7 +101,7 @@ ADDED from AndroidManifest.xml:56:9
 		ADDED from AndroidManifest.xml:59:19
 	android:name
 		ADDED from AndroidManifest.xml:56:19
-activity#com.dmasnig.udcreate.activities.ThreeOclockPrayer
+activity#com.dmasnig.udcreate.activities.PrayersActivity
 ADDED from AndroidManifest.xml:66:9
 	android:screenOrientation
 		ADDED from AndroidManifest.xml:68:19
@@ -111,7 +111,7 @@ ADDED from AndroidManifest.xml:66:9
 		ADDED from AndroidManifest.xml:69:19
 	android:name
 		ADDED from AndroidManifest.xml:66:19
-activity#com.dmasnig.udcreate.activities.NovenaPrayers
+activity#com.dmasnig.udcreate.activities.NovenaPrayer
 ADDED from AndroidManifest.xml:76:9
 	android:screenOrientation
 		ADDED from AndroidManifest.xml:78:19

@@ -8,8 +8,8 @@ android {
         applicationId "com.dmasnig.udcreate"
         minSdkVersion 10
         targetSdkVersion 20
-        versionCode 8
-        versionName "2.2"
+        versionCode 9
+        versionName "2.3"
     }
 
 

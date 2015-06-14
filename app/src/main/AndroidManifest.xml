@@ -63,7 +63,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ThreeOclockPrayer"
+        <activity android:name=".activities.PrayersActivity"
                   android:label="@string/app_name"
                   android:screenOrientation="portrait"
                   android:theme="@style/Theme.Orangebar">
@@ -73,7 +73,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.NovenaPrayers"
+        <activity android:name=".activities.NovenaPrayer"
                   android:label="@string/app_name"
                   android:screenOrientation="portrait"
                   android:theme="@style/Theme.Orangebar">

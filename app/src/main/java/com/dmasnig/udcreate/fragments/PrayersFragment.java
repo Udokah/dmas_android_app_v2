@@ -15,8 +15,8 @@ import android.widget.SimpleAdapter;
 
 import com.dmasnig.udcreate.R;
 import com.dmasnig.udcreate.activities.AboutDivineMercy;
-import com.dmasnig.udcreate.activities.NovenaPrayers;
-import com.dmasnig.udcreate.activities.ThreeOclockPrayer;
+import com.dmasnig.udcreate.activities.PrayersActivity;
+import com.dmasnig.udcreate.activities.NovenaPrayer;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -30,9 +30,15 @@ public class PrayersFragment extends Fragment{
     private View mainveiw  ;
     private Context context ;
     private String[] mPrayers  ;
+    private static String key = "show-prayer";
+
 
     private int[] mIcons = new int[]{
             R.drawable.ic_image_faustina,
+            R.drawable.ic_image_prayer,
+            R.drawable.ic_image_prayer,
+            R.drawable.ic_image_prayer,
+            R.drawable.ic_image_prayer,
             R.drawable.ic_image_prayer,
             R.drawable.ic_image_dm
     };
@@ -61,7 +67,7 @@ public class PrayersFragment extends Fragment{
         layout = (LinearLayout) mainveiw.findViewById(R.id.listview_layout) ;
 
         prayerList = new ArrayList<HashMap<String, String>>();
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < mPrayers.length; i++) {
             HashMap<String, String> hm = new HashMap<String, String>();
             hm.put(PRAYER, mPrayers[i]);
             hm.put(ICONS, Integer.toString(mIcons[i]));
@@ -77,22 +83,18 @@ public class PrayersFragment extends Fragment{
         simpleAdapter = new SimpleAdapter(context, prayerList, R.layout.widget_listview_item, from, to);
 
         listView.setAdapter(simpleAdapter);
-        // ItemClick event handler for the drawer mItems
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> arg0, View v, int position, long arg3) {
-
-                switch (position){
-                    case 0: intent = new Intent(context, NovenaPrayers.class);
-                        break;
-                    case 1: intent = new Intent(context, ThreeOclockPrayer.class);
-                        break;
-                    case 2: intent = new Intent(context, AboutDivineMercy.class);
-                        break;
-                    default: intent = new Intent(context, AboutDivineMercy.class);
-                        break;
+                if(position == 0) {
+                    intent = new Intent(context, NovenaPrayer.class);
+                } else if(position == 6) {
+                    intent = new Intent(context, AboutDivineMercy.class);
+                } else {
+                    intent = new Intent(context, PrayersActivity.class);
+                    intent.putExtra(key, position);
                 }
-
                 startActivity(intent);
             }
         });

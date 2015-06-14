@@ -12,8 +12,11 @@
     <string-array name="list_of_prayers">
         <item>Nine Days Novena To St. Faustina</item>
         <item>3 O\'Clock Prayer to the Divine Mercy</item>
+        <item>The Miracle Prayer</item>
+        <item>Prayer For Mercy For The Dying</item>
+        <item>Prayer To The Divine Mercy</item>
+        <item>Prayer For A Lonely Soul</item>
         <item>About the Divine Mercy Novena</item>
-
     </string-array>
 
     <string-array  name="novenadays">

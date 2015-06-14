@@ -25,12 +25,11 @@ public class AboutDivineMercy extends ActionBarActivity {
 
         // Enabling Up navigation
         actionbar.setDisplayHomeAsUpEnabled(true);
-        actionbar.setDisplayShowHomeEnabled(true);
+        actionbar.setHomeButtonEnabled(true);
 
         Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/droidsans.ttf");
         TextView content = (TextView) findViewById(R.id.about_dm_content);
         content.setTypeface(myTypeface);
     }
-
 
 }

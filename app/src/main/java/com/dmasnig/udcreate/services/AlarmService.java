@@ -29,9 +29,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.springframework.web.util.UriComponentsBuilder;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by udo on 6/11/15.
@@ -134,6 +136,21 @@ public class AlarmService extends Service {
         mRequestQueue.start();
     }
 
+
+    /**
+     * Check if message already exists
+     * @return boolean
+     */
+    private boolean messageExists(String newMessage){
+        List<QuotesDatabase> quotesDatabaseList = ORMDatabaseManager.getInstance().getAllQuotes();
+        for (int i =0 ; i<quotesDatabaseList.size() ; i++) {
+            if(newMessage.equalsIgnoreCase(quotesDatabaseList.get(i).getMessage())){
+                return true;
+            }
+        }
+        return false;
+    }
+
     /**
      * Parse Json response
      * @param response jsonObject from server
@@ -141,23 +158,19 @@ public class AlarmService extends Service {
     private void parseServerResponse(JSONObject response){
         try {
             String message = response.getString("message") ;
-            Date now = new Date();
-            String date = new SimpleDateFormat("EEE, d MMM yyyy").format(now);
+            String date = new SimpleDateFormat("EEE, d MMM yyyy").format(new Date());
 
             /* Store in Database */
             QuotesDatabase quote = new QuotesDatabase();
-            quote.setMessage(message);
-            quote.setDate(date);
-            quote.setHasBeenRead(true);
-            ORMDatabaseManager.getInstance().addQuote(quote);
 
-            createNotification(message); // create notification here
-
-            /*Update preferences set fetched to true */
-           /* SharedPreferences prefs = Lib.getDevicesPreferences(this);
-            SharedPreferences.Editor editor = prefs.edit();
-            editor.putBoolean(Config.PROPERTY_FETCHED_TODAY,true);
-            editor.commit();*/
+            // check if this message is already in database
+            if(!messageExists(message)){
+                quote.setMessage(message);
+                quote.setDate(date);
+                quote.setHasBeenRead(true);
+                ORMDatabaseManager.getInstance().addQuote(quote);
+                createNotification(message); // create notification here
+            }
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -171,24 +184,15 @@ public class AlarmService extends Service {
      */
     private boolean itsTime(){
         Calendar now = Calendar.getInstance();
-        if(now.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY && now.get(Calendar.HOUR_OF_DAY) == 14 && now.get(Calendar.MINUTE) == 50){
-            return true;
+        if(now.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY && now.get(Calendar.HOUR_OF_DAY) == 14){
+            int minute = now.get(Calendar.MINUTE);
+            Log.i("current time", String.valueOf(minute));
+            return (minute == 54) || (minute == 55) || (minute == 56);
         }else{
             return false;
         }
     }
 
-    /**
-     * get Last message from database
-     * @return String
-     */
-    /*private String getLastMessage(){
-        QuotesDatabase quoteObj = ORMDatabaseManager.getInstance().getLastQuote();
-        quoteObj.setHasBeenRead(true);
-        *//* Set quote as Read *//*
-        ORMDatabaseManager.getInstance().updateQuoteStatus(quoteObj);
-        return quoteObj.getMessage();
-    }*/
 
     // A runnable to perform actions when the Alarm is fired
     private Runnable r = new Runnable() {
